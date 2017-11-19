@@ -1,0 +1,150 @@
+/**
+ * Regions, basics to show off the regions.
+ */
+
+.flash-wrap img {
+    width: 100%;   
+}
+
+.main {
+    margin-bottom: 200px;
+    font-family: 'Abel', sans-serif;
+}
+
+ .content {
+    border: 1px dotted;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    font-style: italic; 
+    height: 85px;
+    font-family: 'Abel', sans-serif;
+    margin-top: 10px;
+ }
+
+.wrap-all {
+    margin: 0 auto;
+    max-width: 950px;
+}
+
+.footer-column {
+    float: left;
+    width: 32%;
+    margin-left: 10px;
+}
+
+.footer-column-wrapper {
+    //border: 1px dotted;
+    background-color: grey;
+    color: white;
+    overflow: auto;
+    font-family: 'Abel', sans-serif;
+    
+    a, a:visited {
+        color: white;
+    }
+}
+
+.sidebar {
+    width: 33%;
+    float: left;
+    font-family: 'Abel', sans-serif;
+
+    a, a:visited {
+        color: black;
+    }
+}
+
+.main .has-sidebar {
+    width: 67%;
+    float: left;
+}
+
+.outer-wrap-footer {
+    clear: both;
+    margin-bottom: 22px;
+}
+
+.site-footer {
+    text-align: center;
+    font-family: 'Abel', sans-serif;
+    
+    a, a:visited {
+        color: black;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-type: none;
+    }
+
+    li {
+        display: inline;
+    }
+}
+
+.footer-column {
+    ul {
+        margin: 0;
+        padding: 1em;
+        list-style-type: circle;
+    }
+}
+
+.next-previous {
+    color: black;
+
+    a, a:visited {
+        color: black;
+    }
+
+    .next,
+    .previous {
+        width: 50%;
+    }
+    
+    .next {
+        float: right;
+        text-align: right;
+    }
+}
+
+.breadcrumb {
+    margin-bottom: 22px;
+    font-family: 'Abel', sans-serif;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    
+    li {
+        display: inline;
+
+        &::after {
+            content: " » ";
+        }
+    }
+}
+
+.breadcrumb-wrap {
+    font-family: 'Abel', sans-serif;
+
+    a, a:visited {
+        color: black;
+    }
+}
+
+.site-header {
+    position: relative;
+}
+
+.site-logo-text {
+    font-family: 'Abel', sans-serif;
+    font-weight: bold;
+    a, a:visited {
+        color: black;
+    }
+}
