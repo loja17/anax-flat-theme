@@ -2,60 +2,114 @@
  *  Header
  */
 
+@import url(typo/typography.less);
+
+@magicNumber: 24px;
+
+body {
+}
+
+@columnWidth:   30;
+@gutterWidth:   10;
+@columns:       24;
+@font:          'Abel', sans-serif;
+@navbarItemBgColor: grey;
+
+@maxButtonFontSize: 2em;
+
+.outer-wrap-header {
+    margin-bottom: @magicNumber;
+}
+
+.inner-wrap.inner-wrap-header {
+    @gridWidth: 1000px;
+    @gridImage: "../img/grid/grid950x24x30x10-nomargin.png";
+    //@gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
+
+    .grid(@gridWidth);
+    .route-grid &,
+    html.vgrid & {
+        .showGrid(@gridWidth, @gridImage);
+    }
+
+    .route-typography &,
+    html.hgrid & {
+        @gridImage: "../img/typo/horisontal-grid-24.png";
+        .showHGrid(@gridImage);
+        //background: "../img/typo/horisontal-grid-24.png" repeat-y fixed center center;
+    }
+}
+
+// Size each item in the header
+.site-logo-text,
+.profile {
+    float: left;
+}
+
+.site-header {
+    .column(@columns);
+    @height: 50px;
+
+    .calculMargin(@height);
+    padding-top: @margin / 2!important;
+}
+
+.logo-1 {
+    position: absolute;
+    left: 80px;
+    top: 80px;
+}
+
+
+.row {
+    .row();
+}
+
+// Site title
+.site-logo-text {
+    .column(4);
+    font-size: 1.5em;
+    font-family: @font;
+    color: black;
+    
+    a, a:visited {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+.navbar2 {
+    .column(20);
+    float: left;
+}
+
+// Style navbar
+.rm-default.rm-desktop li {
+    .column(4);
+    text-align: center;
+    color: white;
+    font-family: @font;
+
+    a:hover {
+        background-color: black;
+    }
+
+    @height: 15px;
+
+    .calculMargin(@height);
+    padding-top: @margin / 2!important;
+}
+
 // Size of max navbar button
 .rm-max .rm-small .rm-button {
     font-size: 2em;
 }
 
 .rm-max .rm-mobile {
-	font-family: 'Abel', sans-serif;
+	font-family: @font;
 
 	a:hover {
-    	background-color: grey;
-    }
-
-}
-
-@maxButtonFontSize: 2em;
-
-// Style navbar
-.rm-desktop li {
-    background-color: black;
-    width: 180px;
-    height: 15px;
-    text-align: center;
-    color: white;
-    font-family: 'Abel', sans-serif;
-
-    a {
-    	background-color: grey;
+    	background-color: @navbarItemBgColor;
     }
 }
 
-@navbarItemBgColor: grey;
-
-
-// Size each item in the header
-.site-logo-text,
-.profile {
-    float: left;
-    width: 20%;
-}
-
-.navbar2 {
-	float: left;
-	width: 70%;
-}
-
-.site-header {
-    height: 80px;
-}
-
-// Site title
-.site-logo-text {
-    font-size: 2em;
-    
-    a {
-        text-decoration: none;
-    }
-}

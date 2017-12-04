@@ -1,13 +1,20 @@
 /** --------------------------------------------------------------
  *  Responsive design
  */
+
+@magicNumber: 24px;
+@columnWidth:   30;
+@gutterWidth:   10;
+@columns:       24;
+
 img {
     max-width: 100%;
 }
 
 @media screen and (max-width: 560px) {
     .sidebar {
-        width: 100%;
+        .column(5);
+        //width: 100%;
         //display: none;
     }
 }
@@ -15,14 +22,16 @@ img {
 
 @media screen and (max-width: 750px) {
     .footer-column {
-        width: 100%;
+        .column(@columns);
+        //width: 100%;
     }
 }
 
 
 @media screen and (max-width: 900px) {
      .site-logo-text {
-         width: 100%;
+        .column(4);
+        //width: 100%;
      }
      
      .navbar2 {
@@ -32,11 +41,23 @@ img {
  
 @media screen and (max-width: 200px) {
     .site-logo-text {
-         width: 20%;
+        .column(3);
+        //width: 20%;
     }
      
     .navbar2 {
          display: none;
     }
 }
+
+@media screen and (max-width: 460px) {
+    .content {
+        height: 100px;
+    }
+}
  
+@media screen and (max-width: 400px) {
+    .content {
+        height: 170px;
+    }
+}
