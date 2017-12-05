@@ -3,6 +3,7 @@
  */
 
 @import url(typo/typography.less);
+@import url(header.less);
 
 @magicNumber: 24px;
 
@@ -32,7 +33,6 @@ body {
     html.hgrid & {
         @gridImage: "../img/typo/horisontal-grid-24.png";    
         .showHGrid(@gridImage);
-        //background: "../img/typo/horisontal-grid-24.png" repeat-y fixed center center;
     }
 }
 
@@ -120,7 +120,7 @@ body {
 }
 
 .main.has-sidebar-left {
-    .column(18);
+    .column(19);
     .push(1);
 }
 

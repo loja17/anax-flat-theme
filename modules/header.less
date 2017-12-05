@@ -22,7 +22,7 @@ body {
 }
 
 .inner-wrap.inner-wrap-header {
-    @gridWidth: 1000px;
+    @gridWidth: 1200px;
     @gridImage: "../img/grid/grid950x24x30x10-nomargin.png";
     //@gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
 
@@ -67,8 +67,9 @@ body {
 
 // Site title
 .site-logo-text {
-    .column(4);
+    .column(3);
     font-size: 1.5em;
+    font-weight: bold;
     font-family: @font;
     color: black;
     
@@ -85,12 +86,16 @@ body {
 
 // Style navbar
 .rm-default.rm-desktop li {
-    .column(4);
+    .column(3);
     text-align: center;
     color: white;
     font-family: @font;
 
     a:hover {
+        background-color: black;
+    }
+
+    &.selected {
         background-color: black;
     }
 
@@ -110,6 +115,10 @@ body {
 
 	a:hover {
     	background-color: @navbarItemBgColor;
+    }
+
+    &.selected {
+        background-color: @navbarItemBgColor;
     }
 }
 
