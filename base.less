@@ -9,6 +9,7 @@
 @import url(modules/typo/typography-mixins.less);
 @import url(modules/responsive-menu.less);
 @import url(modules/media-queries.less);
+@import url(modules/figure.less);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=EB+Garamond);
 
@@ -66,7 +67,7 @@ body {
 
 .inner-wrap.inner-wrap-header {
     background-color: @backgroundColorHeader;
-    @gridWidth: 1200px;
+    @gridWidth: 1300px;
     @gridImage: "../img/grid/grid950x24x30x10-nomargin.png";
     //@gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
 
@@ -124,13 +125,13 @@ body {
 }
 
 .navbar2 {
-    .column(20);
+    .column(21);
     float: left;
 }
 
 // Style navbar
 .rm-default.rm-desktop li {
-    .column(3);
+    .column(2.3);
     text-align: center;
     color: @textColorNavbar;
     background-color: @navbarBgColor;
@@ -277,6 +278,21 @@ body {
 .main.has-sidebar-left {
     .column(18);
     .push(1);
+}
+
+.sidebar.sidebar-right {
+    .column(4);
+    .push(1);
+    font-family: @font;
+    margin-left: 10px;
+
+    a, a:visited {
+        color: @textColorMain;
+    }
+}
+
+.main.has-sidebar-right {
+    .column(18);
 }
 
 .site-byline {
