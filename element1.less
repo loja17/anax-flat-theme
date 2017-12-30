@@ -1,0 +1,80 @@
+@import url(modules/grid/grid-float.less);
+@import url(modules/grid/grid-helpers.less);
+@import url(modules/typo/typography-mixins.less);
+@import url(modules/typo/typography.less);
+@import url(modules/responsive-menu.less);
+@import url(modules/media-queries.less);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Cormorant+Garamond|Sacramento);
+
+
+@import url(modules.less);
+@import url(base.less);
+
+@magicNumber: 24px;
+@fontH1:			'Sacramento', cursive;
+@fontH2:			'Cormorant Garamond', serif;
+@font:				'Cormorant Garamond', serif;
+@fontFamilyHeadings:'Sacramento', cursive;
+@fontFamilyLogo: 	'Sacramento', cursive;
+
+@navbarBgColor: rgba(255, 255, 255, 0.4);
+@navbarBgColorHover: green;
+@backgroundColorWrapAll: transparent;
+@backgroundColorMain: rgba(255, 255, 255, 0.4);
+@backgroundColorHeader: transparent;
+@backgroundColorFooterCol: rgba(255, 255, 255, 0.7);
+@backgroundColorFooter: rgba(255, 255, 255, 0.4);
+@backgroundColorByline: rgba(255, 255, 255, 0.7);
+@bgWrapAllImg: url("../img/IMG_0845.JPG");
+@backgroundRepeatMain: repeat repeat;
+
+@rmButtonColor: white;
+
+@logoTextColor: white;
+@logoTextFontSize: 1.2em;
+@textColorNavbar: black;
+@textColorMain: black;
+@textColorByline: black;
+@textColorFooter: black;
+@textColorSiteFooter: black;
+
+@borderStyleByline:;
+@borderColorByline:;
+@fontStyleByline: italic;
+
+@borderStyleMain: 1px solid;
+@borderColorMain: white;
+
+@borderStyleFooter: ;
+@borderColorFooter: ;
+
+@fontSizeHeader: 14px;
+
+@colorH1BorderBottom: black;
+@colorH2BorderBottom: black;
+@borderSizeH1: 1px;
+@borderSizeH2: 1px;
+
+.rm-default.rm-desktop li:hover,
+.figure img:hover,
+img:hover {
+    -webkit-transform:scale(1.2); /* Safari and Chrome */
+    -moz-transform:scale(1.2); /* Firefox */
+    -ms-transform:scale(1.2); /* IE 9 */
+    -o-transform:scale(1.2); /* Opera */
+    transform:scale(1.2);
+}
+
+.flash-wrap {
+	display: none;
+}
+
+.breadcrumb-wrap {
+	background-color: transparent;
+}
+
+.inner-wrap {
+	@gridWidth: 800px;
+	text-align: center;
+}

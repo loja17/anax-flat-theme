@@ -1,0 +1,89 @@
+@import url(modules/grid/grid-float.less);
+@import url(modules/grid/grid-helpers.less);
+@import url(modules/typo/typography-mixins.less);
+@import url(modules/typo/typography.less);
+@import url(modules/responsive-menu.less);
+@import url(modules/media-queries.less);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica|Kranky);
+
+
+@import url(modules.less);
+@import url(base.less);
+
+@magicNumber: 24px;
+@fontH1:			'Kranky', cursive;
+@fontH2:			'IM Fell DW Pica', serif;
+@font:				'IM Fell DW Pica', serif;
+@fontFamilyHeadings:'Kranky', cursive;
+@fontFamilyLogo: 	'Kranky', cursive;
+
+@navbarBgImg: linear-gradient(135deg, rgb(100, 86, 97), rgb(100, 86, 97) 60%, grey);
+@navbarBgColor:;
+@navbarBgColorHover: grey;
+@backgroundColorWrapAll: ; 
+@bgWrapAllImg:       
+	repeating-linear-gradient(190deg, rgba(0, 0, 0, 0.5) 40px,
+        rgba(120, 120, 120, 0.5) 80px, rgba(160, 160, 160, 0.5) 120px,
+        rgba(180, 180, 180, 0.5) 160px, rgba(0, 0, 0, 0.5) 200px,
+        rgba(132, 70, 97, 0.5) 240px, rgba(106, 70, 97, 0.5) 280px,
+        rgba(0, 0, 0, 0.5) 300px),
+    repeating-linear-gradient(-190deg, rgba(0, 0, 0, 0.5) 30px,
+        rgba(120, 120, 120, 0.5) 60px, rgba(160, 160, 160, 0.5) 90px,
+        rgba(180, 180, 180, 0.5) 120px, rgba(0, 0, 0, 0.5) 150px,
+        rgba(132, 70, 97, 0.5) 180px, rgba(106, 70, 97, 0.5) 210px,
+        rgba(0, 0, 0, 0.5) 230px),
+    repeating-linear-gradient(23deg, white 50px, grey 100px,
+        white 150px, black 200px, grey 250px,
+        black 300px, black 350px, grey 370px);
+@backgroundColorMain: rgb(100, 86, 97);
+@backgroundColorHeader: transparent;
+@backgroundColorByline: rgba(100, 86, 97, 0.7);
+
+@rmButtonColor: white;
+
+@logoTextColor: white;
+@logoTextFontSize: 1.2em;
+@textColorNavbar: white;
+@textColorNavbarHover: white;
+@textColorMain: white;
+@textColorByline: white;
+@textColorFooter: white;
+@textColorSiteFooter: white;
+
+@borderStyleNavbar: 1px solid;
+@borderColorNavbar: white;
+@borderStyleByline: 1.5px solid;
+@borderColorByline: white;
+@fontStyleByline: italic;
+
+@borderStyleMain: 1.5px solid;
+@borderColorMain: white;
+
+@fontSizeHeader: 14px;
+
+@colorH1BorderBottom: white;
+@colorH2BorderBottom: white;
+@borderSizeH1: 1.5px;
+@borderSizeH2: 1px;
+
+.site-logo-text-icon,
+.logo-1 {
+	display: none;
+}
+
+.flash-wrap img {
+	border: 2px solid;
+	border-color: white;
+}
+.rm-default.rm-desktop li:hover {
+    -webkit-transform:scale(1.2); /* Safari and Chrome */
+    -moz-transform:scale(1.2); /* Firefox */
+    -ms-transform:scale(1.2); /* IE 9 */
+    -o-transform:scale(1.2); /* Opera */
+    transform:scale(1.2);
+}
+
+.site-logo-text {
+    .column(1.5);
+}

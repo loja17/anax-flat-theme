@@ -22,12 +22,16 @@ body {
 @columnWidth:   30;
 @gutterWidth:   10;
 @columns:       24;
+@gridWidth:;
 
 @fontH1:        'EB Garamond', serif;
+@fontH2:        'EB Garamond', serif;
 @font:			'EB Garamond', serif;
 @fontFamilyHeadings: 'EB Garamond', serif;
 @fontFamilyLogo: 'EB Garamond', serif;
+@fontFamilyHeader: @font;
 
+@navbarBgImg: ;
 @navbarBgColor:;
 @navbarBgColorHover:;
 @backgroundColorWrapAll:;
@@ -35,12 +39,15 @@ body {
 @backgroundColorHeader: white;
 @backgroundColorFooterCol: ;
 @backgroundColorFooter: ;
-@backgorundColorByline: ;
+@backgroundColorByline: ;
 @rmButtonColor: ;
+
+@footerColBgImg:;
 
 @logoTextColor: black;
 @logoTextFontSize: 1.5em;
 @textColorNavbar: black;
+@textColorNavbarHover: ;
 @textColorMain: black;
 @textColorByline: ;
 @textColorFooter: ;
@@ -52,13 +59,51 @@ body {
 
 @maxButtonFontSize: 2em;
 
+@borderStyleNavbar:;
+@borderColorNavbar:;
 @borderStyleByline: 1px solid;
 @borderColorByline: ;
 @fontStyleByline: italic;
+@borderStyleMain: 1px solid;
+@borderColorMain: ;
+@borderStyleFooter: ;
+@borderColorFooter: ;
+@backgroundMainImg: ;
+@backgroundRepeatMain: ;
+@bgWrapAllImg: ;
+
+@sidebarBgImg: ;
+
+.flash-wrap img {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+img {
+    margin-left: @magicNumber;
+    margin-right: @magicNumber;
+    margin-bottom: @magicNumber;
+}
+
+.figure img,
+.logo-1,
+.site-logo-text-icon img {
+    margin-left: 0px;
+    margin-right: 0px;
+}
 
 
 .wrap-all {
     background-color: @backgroundColorWrapAll;
+    background-image: @bgWrapAllImg;
+}
+.outer-wrap-main,
+.inner-wrap-header,
+.outer-wrap-footer,
+.outer-wrap-flash {
+    background-image: @backgroundMainImg;
+    background-repeat: @backgroundRepeatMain;
 }
 
 .outer-wrap-header {
@@ -67,7 +112,7 @@ body {
 
 .inner-wrap.inner-wrap-header {
     background-color: @backgroundColorHeader;
-    @gridWidth: 1300px;
+    @gridWidth: 1400px;
     @gridImage: "../img/grid/grid950x24x30x10-nomargin.png";
     //@gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
 
@@ -101,8 +146,8 @@ body {
 
 .logo-1 {
     position: absolute;
-    left: 80px;
-    top: 80px;
+    left: 70px;
+    top: 120px;
 }
 
 
@@ -112,7 +157,7 @@ body {
 
 // Site title
 .site-logo-text {
-    .column(3);
+    .column(2);
     font-family: @fontFamilyLogo;
     font-size: @logoTextFontSize;
     font-weight: bold;
@@ -125,25 +170,30 @@ body {
 }
 
 .navbar2 {
-    .column(21);
+    .column(22);
     float: left;
 }
 
 // Style navbar
 .rm-default.rm-desktop li {
-    .column(2.3);
+    .column(2.1);
     text-align: center;
     color: @textColorNavbar;
     background-color: @navbarBgColor;
-    font-family: @font;
+    font-family: @fontFamilyHeader;
     font-size: @fontSizeHeader;
+    background-image: @navbarBgImg;
+    border: @borderStyleNavbar;
+    border-color: @borderColorNavbar;
 
     a:hover {
         background-color: @navbarBgColorHover;
+        color: @textColorNavbarHover;
     }
 
     &.selected {
         background-color: @navbarBgColorHover;
+        color: @textColorNavbarHover;
     }
 
     @height: 15px;
@@ -159,7 +209,7 @@ body {
 }
 
 .rm-max .rm-mobile {
-    font-family: @font;
+    font-family: @font;   
 
     a:hover {
         background-color: @navbarBgColor;
@@ -172,7 +222,6 @@ body {
 
 .inner-wrap {
     color: @textColorMain;
-    background-color: @backgroundColorMain;
 	@gridWidth: 900px;
 	@gridImage: "../img/grid/grid950x24x30x10-nomargin.png";
 	//@gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
@@ -194,6 +243,10 @@ body {
 	a, a:visited {
         color: @textColorMain;
     }
+
+    background-color: @backgroundColorMain;
+    border: @borderStyleMain;
+    border-color: @borderColorMain;
 }
 
 .row {
@@ -269,7 +322,7 @@ body {
 	.column(4);
 	font-family: @font;
 	margin-left: 10px;
-
+    background-image: @sidebarBgImg;
     a, a:visited {
         color: @textColorMain;
     }
@@ -297,6 +350,7 @@ body {
 
 .site-byline {
 	.column(@columns);
+    background-color: @backgroundColorByline;
     color: @textColorByline;
     font-family: @font;
 	font-style: @fontStyleByline;
@@ -315,10 +369,14 @@ body {
     overflow: auto;
     font-family: @font;
     color: @textColorFooter;
+    background-image: @footerColBgImg;
 
     a, a:visited {
         color: @textColorFooter;
     }
+
+    border: @borderStyleFooter;
+    border-color: @borderColorFooter;
 }
 
 .footer-column {
@@ -332,6 +390,8 @@ body {
     font-family: @font;
     color: @textColorSiteFooter;
     background-color: @backgroundColorFooter;
+    border: @borderStyleFooter;
+    border-color: @borderColorFooter;
     
     a, a:visited {
         color: @textColorSiteFooter;
