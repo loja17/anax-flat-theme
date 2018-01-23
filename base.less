@@ -11,8 +11,7 @@
 @import url(modules/media-queries.less);
 @import url(modules/figure.less);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
-
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans+Condensed:300);
 
 @magicNumber: 24px;
 
@@ -22,40 +21,44 @@ body {
 @columnWidth:   30;
 @gutterWidth:   10;
 @columns:       24;
+@columnsFo:     21;
 @gridWidth:;
 
-@fontH1:        'EB Garamond', serif;
-@fontH2:        'EB Garamond', serif;
-@font:			'EB Garamond', serif;
-@fontFamilyHeadings: 'EB Garamond', serif;
-@fontFamilyLogo: 'EB Garamond', serif;
-@fontFamilyHeader: @font;
+@fontH1:        'Amatic SC', cursive;
+@fontH2:        'Amatic SC', cursive;
+@font:          'Open Sans Condensed', sans-serif;
+@fontFamilyHeadings: 'Amatic SC', cursive;
+@fontFamilyLogo: 'Amatic SC', cursive;
+@fontFamilyHeader: 'Amatic SC', cursive;
+
+@fontWeightHeader: bold;
 
 @navbarBgImg: ;
 @navbarBgColor:;
 @navbarBgColorHover:;
-@backgroundColorWrapAll:;
+@backgroundColorWrapAll: white;
 @backgroundColorMain: white;
 @backgroundColorHeader: white;
 @backgroundColorFooterCol: ;
-@backgroundColorFooter: ;
+@backgroundColorFooter: rgb(59, 59, 59);
 @backgroundColorByline: ;
 @rmButtonColor: ;
 
 @footerColBgImg:;
 
 @logoTextColor: black;
-@logoTextFontSize: 1.5em;
+@logoTextFontSize: 2em;
 @textColorNavbar: black;
 @textColorNavbarHover: ;
 @textColorMain: black;
 @textColorByline: ;
-@textColorFooter: ;
-@textColorSiteFooter: ;
+@textColorFooter: white;
+@textColorSiteFooter: white;
+@textColorBread:;
 
 
-@headerHeight: 50px;
-@fontSizeHeader: 20px;
+@headerHeight: 28px;
+@fontSizeHeader: 1.5em;
 
 @maxButtonFontSize: 2em;
 
@@ -69,30 +72,38 @@ body {
 @borderStyleFooter: ;
 @borderColorFooter: ;
 @backgroundMainImg: ;
+@backgroundHeadFlashImg: ;
 @backgroundRepeatMain: ;
 @bgWrapAllImg: ;
 
 @sidebarBgImg: ;
 
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 .flash-wrap img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 0px;
 }
 
-img {
-    margin-left: @magicNumber;
-    margin-right: @magicNumber;
-    margin-bottom: @magicNumber;
+.figure img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
 }
 
-.figure img,
+img,
 .logo-1,
 .site-logo-text-icon img {
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
     margin-left: 0px;
     margin-right: 0px;
 }
-
 
 .wrap-all {
     background-color: @backgroundColorWrapAll;
@@ -106,15 +117,26 @@ img {
     background-repeat: @backgroundRepeatMain;
 }
 
+.inner-wrap-header {
+}
+
+.outer-wrap-footer {
+    clear: both;
+    background-color: @backgroundColorFooter;
+}
+
 .outer-wrap-header {
     margin-bottom: @magicNumber;
+}
+
+.inner-wrap-flash {
+    margin-top: -25px;
 }
 
 .inner-wrap.inner-wrap-header {
     background-color: @backgroundColorHeader;
     @gridWidth: 1400px;
     @gridImage: "../img/grid/grid950x24x30x10-nomargin.png";
-    //@gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
 
     .grid(@gridWidth);
     .route-grid &,
@@ -126,7 +148,6 @@ img {
     html.hgrid & {
         @gridImage: "../img/typo/horisontal-grid-24.png";
         .showHGrid(@gridImage);
-        //background: "../img/typo/horisontal-grid-24.png" repeat-y fixed center center;
     }
 }
 
@@ -144,20 +165,13 @@ img {
     padding-top: @margin / 2!important;
 }
 
-.logo-1 {
-    position: absolute;
-    left: 70px;
-    top: 120px;
-}
-
-
 .row {
     .row();
 }
 
 // Site title
 .site-logo-text {
-    .column(2);
+    .column(4);
     font-family: @fontFamilyLogo;
     font-size: @logoTextFontSize;
     font-weight: bold;
@@ -170,18 +184,20 @@ img {
 }
 
 .navbar2 {
-    .column(22);
+    .column(18);
     float: left;
 }
 
 // Style navbar
 .rm-default.rm-desktop li {
-    .column(2.1);
+    .column(3);
+    float: right;
     text-align: center;
     color: @textColorNavbar;
     background-color: @navbarBgColor;
     font-family: @fontFamilyHeader;
     font-size: @fontSizeHeader;
+    font-weight: @fontWeightHeader;
     background-image: @navbarBgImg;
     border: @borderStyleNavbar;
     border-color: @borderColorNavbar;
@@ -189,11 +205,13 @@ img {
     a:hover {
         background-color: @navbarBgColorHover;
         color: @textColorNavbarHover;
+        text-decoration: underline;
     }
 
     &.selected {
         background-color: @navbarBgColorHover;
         color: @textColorNavbarHover;
+        text-decoration: underline;
     }
 
     @height: 15px;
@@ -220,11 +238,12 @@ img {
     }
 }
 
-.inner-wrap {
+.inner-wrap-breadcrumb,
+.inner-wrap-main,
+.inner-wrap-footer {
     color: @textColorMain;
 	@gridWidth: 900px;
 	@gridImage: "../img/grid/grid950x24x30x10-nomargin.png";
-	//@gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
 
     .grid(@gridWidth);
     .route-grid &,
@@ -286,7 +305,7 @@ img {
     margin-bottom: 22px;
     margin-left: 20px;
     font-family: @font;
-    color: @textColorMain;
+    color: @textColorBread;
 
     ul {
         margin: 0;
@@ -303,7 +322,7 @@ img {
     }
 
     a, a:visited {
-        color: @textColorMain;
+        color: @textColorBread;
     }
 }
 
@@ -345,21 +364,8 @@ img {
 }
 
 .main.has-sidebar-right {
-    .column(18);
-}
-
-.site-byline {
-	.column(@columns);
-    background-color: @backgroundColorByline;
-    color: @textColorByline;
-    font-family: @font;
-	font-style: @fontStyleByline;
-	font-size: 12px;
-	border: @borderStyleByline;
-    border-color: @borderColorByline;
-    @height: 100px;
-    .calculMargin(@height);
-    padding-top: @margin / 2!important;
+    .column(17);
+    .push(1);
 }
 
 .footer-column-wrapper {
@@ -380,7 +386,8 @@ img {
 }
 
 .footer-column {
-	.column(@columns / 3);
+	.column(@columnsFo / 3);
+    .push(1);
     color: @textColorFooter;
 }
 
